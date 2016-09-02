@@ -1,0 +1,29 @@
+<?php
+
+/*
+|--------------------------------------------------------------------------
+| Application Routes
+|--------------------------------------------------------------------------
+|
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the controller to call when that URI is requested.
+|
+*/
+
+
+Route::auth();
+
+Route::get('/', 'HomeController@index');
+Route::controllers([
+    'auth' => 'Auth\AuthController',
+    'password' => 'Auth\PasswordController',
+    'room' => Master\RoomController::class,
+    'typeroom' => Master\TyperoomController::class,
+    'reservasi' => Transaksi\ReservasiController::class,
+    'reservasidetail' => Transaksi\ReservasidetailController::class,
+    'cekkamar' => Transaksi\CekkamarController::class,
+    'api' => Api\FungsiController::class,
+    'inapkamar' => Transaksi\InapkamarController::class,
+    'biaya' => Transaksi\BiayaController::class,
+]);
